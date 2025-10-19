@@ -1,5 +1,7 @@
 package com.leetcode;
 
+import java.util.stream.IntStream;
+
 public class LeetCode1SplitIndexFinder {
 
 	public static void main(String[] args) {
@@ -20,26 +22,23 @@ public class LeetCode1SplitIndexFinder {
 
 		prefixMax[0] = Integer.MIN_VALUE;
 
-		for (int i = 1; i <= n - 1; i++) {
-			prefixMax[i] = Math.max(prefixMax[i - 1], arr[i - 1]);
-			System.out.println(i + "," + prefixMax[i]);
-		}
+		IntStream.range(1, n)
+        .forEach(i -> {
+            prefixMax[i] = Math.max(prefixMax[i - 1], arr[i - 1]);
+            System.out.println(i + "," + prefixMax[i]);
+        });
 
 		suffixMin[n-1] = Integer.MAX_VALUE;
 
-		for (int i = n - 2; i >= 0; i--) {
-			suffixMin[i] = Math.min(suffixMin[i + 1], arr[i + 1]);
-			System.out.println(i + "," + suffixMin[i]);
+		IntStream.iterate(n - 2, i -> i >= 0, i -> i - 1).forEach(i -> {
+            suffixMin[i] = Math.min(suffixMin[i + 1], arr[i + 1]);
+            System.out.println(i + "," + suffixMin[i]);
+        });
+		
 
-		}
 		
-		for(int i =1 ; i<n-1; i++) {
-			if (prefixMax[i] < suffixMin[i])
-				return i;
-			
-		}
-		
-		return -1;
+		return IntStream.range(1, n-1)
+        .filter(i -> prefixMax[i] < suffixMin[i]).findFirst().orElse(-1);
 		
 	}
 
