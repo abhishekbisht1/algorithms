@@ -9,7 +9,7 @@ public class LeetCode1CourseSchedule {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[][] prerequisites = { { 1, 0 }, { 2, 1 }, { 3, 2 } , { 0, 1}};
+		int[][] prerequisites = { { 1, 0 }, { 2, 1 }, { 3, 2 }, { 0, 1 } };
 		int courses = 4;
 		System.out.println(canFinish(courses, prerequisites));
 
@@ -21,7 +21,7 @@ public class LeetCode1CourseSchedule {
 		for (int i = 0; i < courses; i++) {
 			graph.add(new ArrayList<>());
 		}
-		
+
 		int[] indegree = new int[courses];
 
 		for (int[] pre : prerequisites) {
@@ -30,29 +30,26 @@ public class LeetCode1CourseSchedule {
 			graph.get(prereq).add(course);
 			indegree[course]++;
 		}
-		
+
 		Queue<Integer> queue = new LinkedList<>();
-		for (int i =0 ; i< courses; i++) {
-			if(indegree[i] == 0) {
+		for (int i = 0; i < courses; i++) {
+			if (indegree[i] == 0) {
 				queue.offer(i);
 			}
 		}
-		
+
 		int completed = 0;
-		
+
 		while (!queue.isEmpty()) {
-			
 			int curr = queue.poll();
 			completed++;
-			
-			for (int next: graph.get(curr)) {
+
+			for (int next : graph.get(curr)) {
 				indegree[next]--;
-				if(indegree[next] == 0) {
+				if (indegree[next] == 0) {
 					queue.offer(next);
-					
 				}
 			}
-			
 		}
 		return completed == courses;
 	}
