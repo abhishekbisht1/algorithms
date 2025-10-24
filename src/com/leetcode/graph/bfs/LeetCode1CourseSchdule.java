@@ -1,4 +1,4 @@
-package com.leetcode.graph;
+package com.leetcode.graph.bfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
