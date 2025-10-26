@@ -1,0 +1,11 @@
+📊 Comparison Summary
+Algorithm	Time (Avg)	 Space	Stable	Type
+===========================================
+Bubble  	O(n²)	      O(1)	✅	Comparison
+Selection	O(n²)	      O(1)	❌	Comparison
+Insertion 	O(n²)	      O(1)	✅	Comparison
+Merge    	O(n log n)	  O(n)	✅	Comparison
+Quick   	O(n log n)O(log n)	❌	Comparison
+Heap    	O(n log n)	  O(1)	❌	Comparison
+Counting 	O(n + k)	  O(k)	✅	Non-Comparison
+Radix  	   O(nk)	   O(n + k)	✅	Non-Comparison
