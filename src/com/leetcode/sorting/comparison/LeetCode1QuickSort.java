@@ -1,4 +1,4 @@
-package com.leetcode.sorting;
+package com.leetcode.sorting.comparison;
 
 public class LeetCode1QuickSort {
 
@@ -6,7 +6,7 @@ public class LeetCode1QuickSort {
 		// TODO Auto-generated method stub
 
 		int[] arr = { 10, 7, 8, 9, 1, 5 };
-		quickSort(arr,0 ,arr.length - 1);
+		quickSort(arr, 0, arr.length - 1);
 
 		System.out.println("Quick Sorted Array: ");
 
@@ -19,13 +19,12 @@ public class LeetCode1QuickSort {
 	private static void quickSort(int[] arr, int low, int high) {
 		// TODO Auto-generated method stub
 
+		if (low < high) {
+			int partition = partition(arr, low, high);
 
-		if(low < high) {
-		int partition = partition(arr, low, high);
+			quickSort(arr, low, partition - 1);
+			quickSort(arr, partition + 1, high);
 
-		quickSort(arr,low , partition -1  );
-		quickSort(arr,partition + 1 ,high);
-		
 		}
 
 	}
@@ -36,23 +35,23 @@ public class LeetCode1QuickSort {
 		int pivot = arr[high];
 		int initial = low;
 		for (int i = low; i < high; i++) {
-			
+
 			if (arr[i] <= pivot) {
 				swap(arr, initial, i);
 				initial++;
 			}
 		}
-		swap(arr,initial , high);
+		swap(arr, initial, high);
 		return initial;
 	}
 
 	private static int[] swap(int[] arr, int initial, int i) {
-		
-	 int temp = arr[initial] ;
-	 arr[initial] = arr[i] ;
-	 arr[i] =  temp;
-	 
-	 return arr;
+
+		int temp = arr[initial];
+		arr[initial] = arr[i];
+		arr[i] = temp;
+
+		return arr;
 
 	}
 
