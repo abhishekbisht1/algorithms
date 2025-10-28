@@ -1,0 +1,9 @@
+🔹 Algorithm
+
+Use two pointers: left and right for window boundaries.
+
+Move right pointer → add characters to set.
+
+If char already exists → move left pointer until duplicate is removed.
+
+Track maxLen = right - left + 1 at each step.

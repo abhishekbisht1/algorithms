@@ -1,0 +1,13 @@
+🔹 Algorithm (Using Monotonic Stack)
+
+We’ll use a monotonic decreasing stack that stores indices.
+
+Steps:
+
+Iterate from right to left.
+
+While stack not empty and arr[stack.top()] <= arr[i], pop the stack.
+
+If stack not empty → top of stack is the next greater element.
+
+Push current index i onto stack.
