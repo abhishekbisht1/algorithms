@@ -1,15 +1,15 @@
-package com.leetcode.monotonicstack;
+package com.leetcode.monotonicStack;
 
 import java.util.Arrays;
 import java.util.Stack;
 
-public class LeetCode1NextGreaterElement {
+public class LeetCode2NextSmallerElement {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] arr = { 2, 1, 5, 3, 4 };
 
-		int result[] = nextGreaterElement(arr, arr.length);
+		int result[] = nextSmallerElement(arr, arr.length);
 
 		System.out.println("Printing Next Greater Element");
 
@@ -21,7 +21,7 @@ public class LeetCode1NextGreaterElement {
 
 	}
 
-	private static int[] nextGreaterElement(int[] arr, int n) {
+	private static int[] nextSmallerElement(int[] arr, int n) {
 		// TODO Auto-generated method stub
 
 		int result[] = new int[n];
@@ -30,7 +30,7 @@ public class LeetCode1NextGreaterElement {
 
 		for (int i = n - 1; i >= 0; i--) {
 
-			while (!stack.isEmpty() && arr[stack.peek()] <= arr[i]) {
+			while (!stack.isEmpty() && arr[stack.peek()] >= arr[i]) {
 				stack.pop();
 			}
 
@@ -41,6 +41,8 @@ public class LeetCode1NextGreaterElement {
 		}
 
 		return result;
+
+
 
 	}
 

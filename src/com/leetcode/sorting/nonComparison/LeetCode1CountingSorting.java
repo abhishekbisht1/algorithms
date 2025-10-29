@@ -1,4 +1,4 @@
-package com.leetcode.sorting.noncomparison;
+package com.leetcode.sorting.nonComparison;
 
 public class LeetCode1CountingSorting {
 
