@@ -1,8 +1,8 @@
-package com.leetcode;
+package com.leetcode.sorting.comparison;
 
 import java.util.Random;
 
-public class LeetCode6QuickSelect {
+public class LeetCode3QuickSelect {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

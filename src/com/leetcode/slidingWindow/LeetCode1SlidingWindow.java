@@ -1,8 +1,8 @@
-package com.leetcode;
+package com.leetcode.slidingWindow;
 
 import java.util.stream.IntStream;
 
-public class LeetCode3SlidingWindow {
+public class LeetCode1SlidingWindow {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
