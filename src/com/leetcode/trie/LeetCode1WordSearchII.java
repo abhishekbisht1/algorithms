@@ -18,8 +18,10 @@ public class LeetCode1WordSearchII {
 
 		String[] words = { "oath", "pea", "eat", "rain" };
 
-		findWords(board, words);
+		List<String>  output = findWords(board, words);
 
+		
+		System.out.println(output.toString());
 	}
 
 	private static List<String> findWords(char[][] board, String[] words) {
@@ -30,11 +32,11 @@ public class LeetCode1WordSearchII {
 
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board[i].length; j++) {
-				dfs(board, i, j, root,result);
+				dfs(board, i, j, root, result);
 			}
 		}
 
-		return null;
+		return result;
 
 	}
 
@@ -44,15 +46,25 @@ public class LeetCode1WordSearchII {
 
 		if (c == '#' || node.children[c - 'a'] == null)
 			return;
-
+		
+		node = node.children[c - 'a'];
+		if( node.word!= null) {
+			result.add(node.word);
+			node.word = null;
+		}
+        
+		board[i][j] = '#';
+		
 		if (i > 0)
 			dfs(board, i - 1, j, node, result);
 		if (j > 0)
 			dfs(board, i, j - 1, node, result);
 		if (i < board.length - 1)
 			dfs(board, i + 1, j, node, result);
-		if (j < board[0].length - 1 )
+		if (j < board[0].length - 1)
 			dfs(board, i, j + 1, node, result);
+		
+		board[i][j] = c;
 
 	}
 
