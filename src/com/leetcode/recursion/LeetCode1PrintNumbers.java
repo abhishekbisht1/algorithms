@@ -16,8 +16,10 @@ public class LeetCode1PrintNumbers {
 		if (n == 0)
 			return;
 
+		//System.out.println(n);
 		printNumbers(n - 1);
 		System.out.println(n);
+		
 
 	}
 
