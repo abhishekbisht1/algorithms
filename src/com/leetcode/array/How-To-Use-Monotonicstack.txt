@@ -1,0 +1,11 @@
+⚙️ Approach (Using Stack)
+
+We use a monotonic decreasing stack (stores indices of days).
+
+Traverse from end → start.
+
+For each day i, pop from the stack until we find a warmer temperature.
+
+If stack not empty → the next warmer day = top of stack.
+
+Store the difference of indices.
