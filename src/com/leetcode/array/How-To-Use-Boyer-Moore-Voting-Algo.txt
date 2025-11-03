@@ -1,0 +1,20 @@
+⚙️ Approach 2 — Boyer–Moore Voting Algorithm (Optimal ✅)
+
+This is the most efficient and elegant solution —
+O(n) time and O(1) space, used in top interviews.
+
+💡 Intuition
+
+If we pair up different elements, the majority element will remain at the end.
+
+Maintain a candidate and a count.
+
+Traverse array:
+
+If count == 0, pick current element as new candidate.
+
+If element == candidate → count++
+
+Else → count--
+
+At the end, the candidate is the majority element.

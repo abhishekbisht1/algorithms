@@ -1,6 +1,6 @@
 package com.leetcode.array;
 
-public class CountGoodArithmeticSubarrays {
+public class LeetCode2CountGoodArithmeticSubarrays {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
