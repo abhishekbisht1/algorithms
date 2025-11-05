@@ -3,7 +3,7 @@ package com.leetcode.array;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LeetCode8maxLengthSubarray {
+public class LeetCode9maxLengthSubarray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
