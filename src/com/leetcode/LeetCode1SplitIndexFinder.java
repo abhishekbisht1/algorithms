@@ -32,7 +32,7 @@ public class LeetCode1SplitIndexFinder {
 
 		IntStream.iterate(n - 2, i -> i >= 0, i -> i - 1).forEach(i -> {
             suffixMin[i] = Math.min(suffixMin[i + 1], arr[i + 1]);
-            System.out.println(i + "," + suffixMin[i]);
+	            System.out.println(i + "," + suffixMin[i]);
         });
 		
 

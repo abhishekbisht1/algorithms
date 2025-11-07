@@ -11,7 +11,7 @@ public class LeetCode5MergeKList {
 
 		// int[][] arr = { { 1, 3, 5 }, { 1, 3, 4 }, { 3, 6 } };
 
-		ListNode l1 = new ListNode(1);
+		ListNode l1 = new ListNode(2);
 		l1.next = new ListNode(3);
 		l1.next.next = new ListNode(5);
 
