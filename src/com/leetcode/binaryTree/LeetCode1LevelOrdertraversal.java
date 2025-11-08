@@ -11,8 +11,8 @@ public class LeetCode1LevelOrdertraversal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Node roota = constructBinaryTree(root);
-		List<List<Integer>> treeTraversal = levelOrderTraversal(roota);
+		Node root_ = constructBinaryTree(root);
+		List<List<Integer>> treeTraversal = levelOrderTraversal(root_);
 		printLevelOrderTravcersal(treeTraversal);
 
 	}
