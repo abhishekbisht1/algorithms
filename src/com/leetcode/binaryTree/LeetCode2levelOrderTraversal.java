@@ -33,6 +33,7 @@ public class LeetCode2levelOrderTraversal {
 		queue.offer(root_);
 
 		while (!queue.isEmpty()) {
+			
 			int levelSize = queue.size();
 			List<Integer> list = new ArrayList<>();
 

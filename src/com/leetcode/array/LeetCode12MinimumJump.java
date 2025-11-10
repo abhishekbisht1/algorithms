@@ -1,6 +1,6 @@
 package com.leetcode.array;
 
-public class LeetCode12MinimumJumop {
+public class LeetCode12MinimumJump {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
