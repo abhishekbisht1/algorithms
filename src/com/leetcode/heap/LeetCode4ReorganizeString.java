@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 public class LeetCode4ReorganizeString {
 
 	public static void main(String args[]) {
-		String str = "aab";
+		String str = "aaab";
 		System.out.println(reorganizeString(str));
 	}
 
@@ -29,7 +29,7 @@ public class LeetCode4ReorganizeString {
 		Map.Entry<Character, Integer> prev = null;
 
 		while (!maxHeap.isEmpty()) {
-
+			
 			Map.Entry<Character, Integer> current = maxHeap.poll();
 			result.append(current.getKey());
 			current.setValue(current.getValue() - 1);
@@ -38,6 +38,9 @@ public class LeetCode4ReorganizeString {
 				maxHeap.offer(prev);
 
 			prev = current;
+			
+			if(maxHeap.isEmpty() && prev!=null  && prev.getValue() > 0)
+				maxHeap.offer(prev);
 		}
 
 		for (int i = 1; i < result.length(); i++) {
