@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class LexicographicPermutation {
+public class  LexicographicPermutationUnique {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -42,6 +42,9 @@ public class LexicographicPermutation {
 		for (int i = 0; i < strArray.length; i++) {
 
 			if (used[i] == true)
+				continue;
+
+			if (i > 0 && strArray[i - 1] == strArray[i] && !used[i - 1])
 				continue;
 
 			used[i] = true;
