@@ -25,15 +25,16 @@ public class PalindromePartitioning {
 	private static void backtrack(String str, int start, ArrayList path, List<List<String>> result) {
 		// TODO Auto-generated method stub
 
-		if(start == ) {
-			
-		}
+	    if (start == str.length()) {
+            result.add(new ArrayList<>(path)); 
+            return;
+        }
 		
 		for (int end = start; end < str.length(); end++) {
 			if (isPalindrome(str, start, end)) {
 				path.add(str.substring(start, end + 1));
 				backtrack(str, end + 1, path, result);
-				path.remove();
+				path.remove(path.size() - 1);
 			}
 		}
 	}
@@ -44,7 +45,7 @@ public class PalindromePartitioning {
 			if (str.charAt(left++) != str.charAt(right--))
 				return false;
 		}
-		return false;
+		return true;
 	}
 
 }
