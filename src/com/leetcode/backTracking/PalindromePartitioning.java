@@ -11,7 +11,7 @@ public class PalindromePartitioning {
 		String str = "aab";
 		List<List<String>> result = partitioningPalindrome(str);
 		
-		for(List res:  result)
+		for(List<String> res:  result)
 			System.out.println(res);
 
 	}
@@ -25,7 +25,7 @@ public class PalindromePartitioning {
 
 	}
 
-	private static void backtrack(String str, int start, ArrayList path, List<List<String>> result) {
+	private static void backtrack(String str, int start, List<String> path, List<List<String>> result) {
 		// TODO Auto-generated method stub
 
 	    if (start == str.length()) {
