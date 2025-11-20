@@ -9,7 +9,10 @@ public class PalindromePartitioning {
 		// TODO Auto-generated method stub
 
 		String str = "aab";
-		partitioningPalindrome(str);
+		List<List<String>> result = partitioningPalindrome(str);
+		
+		for(List res:  result)
+			System.out.println(res);
 
 	}
 
