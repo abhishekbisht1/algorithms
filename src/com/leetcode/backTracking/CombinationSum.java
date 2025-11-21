@@ -26,7 +26,6 @@ public class CombinationSum {
 
 		List<List<Integer>> result = new ArrayList<>();
 		backtrack(0, target, new ArrayList<>(), array, result);
-
 		return result;
 
 	}
@@ -45,9 +44,7 @@ public class CombinationSum {
 				break;
 			
 			path.add(array[i]);
-
 			backtrack(i, target - array[i], path, array, result);
-
 			path.remove(path.size() - 1);
 
 		}
