@@ -9,7 +9,7 @@ public class CombinationSum {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int[] array = { 8,7,4,3};
+		int[] array = {8, 7, 4, 3};
 		int target = 11;
 
 		CombinationSum combSum = new CombinationSum();
