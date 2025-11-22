@@ -1,4 +1,4 @@
-package com.leetcode.graph.bfs;
+package com.leetcode.graph.dfs;
 
 import java.util.Arrays;
 
