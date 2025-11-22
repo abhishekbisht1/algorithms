@@ -13,7 +13,6 @@ public class CombinationSum {
 		int target = 11;
 
 		CombinationSum combSum = new CombinationSum();
-		Arrays.sort(array);
 		List<List<Integer>> result =  combSum.combinationSum(array, target);
 		
 		for(List<Integer> res : result)
@@ -24,6 +23,7 @@ public class CombinationSum {
 	private List<List<Integer>> combinationSum(int[] array, int target) {
 		// TODO Auto-generated method stub
 
+		Arrays.sort(array);
 		List<List<Integer>> result = new ArrayList<>();
 		backtrack(0, target, new ArrayList<>(), array, result);
 		return result;
