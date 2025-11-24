@@ -1,0 +1,9 @@
+🧠 Why XOR can swap values?
+
+XOR properties:
+
+x ^ x = 0
+
+x ^ 0 = x
+
+x ^ y ^ x = y (XOR cancels out duplicates)
