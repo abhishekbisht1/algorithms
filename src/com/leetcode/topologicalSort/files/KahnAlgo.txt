@@ -1,0 +1,47 @@
+Kahn’s Algorithm (BFS / Indegree method)
+Idea
+
+Count indegree of each node
+
+Start with nodes having indegree = 0
+
+Remove them from the graph and reduce indegree of neighbors
+
+If new indegree becomes 0 → push to queue
+
+Continue until queue is empty
+
+When to use
+
+When you need lexicographically smallest order → use min-heap
+
+When you want to detect cycle (if result size < n → cycle)
+
+Easy to understand/debug
+
+Pseudo-code (Java)
+public List<Integer> topoSort(int n, List<List<Integer>> adj) {
+    int[] indegree = new int[n];
+    for(int u = 0; u < n; u++) {
+        for(int v : adj.get(u)) indegree[v]++;
+    }
+
+    Queue<Integer> q = new LinkedList<>();
+    for(int i = 0; i < n; i++)
+        if(indegree[i] == 0) q.add(i);
+
+    List<Integer> result = new ArrayList<>();
+
+    while(!q.isEmpty()) {
+        int u = q.poll();
+        result.add(u);
+
+        for(int v : adj.get(u)) {
+            indegree[v]--;
+            if(indegree[v] == 0)
+                q.add(v);
+        }
+    }
+
+    return result;   // if result.size() < n → cycle exists
+}
