@@ -12,11 +12,11 @@ public class isPalindrome {
 	private static boolean isPalindrome(int x) {
 		// TODO Auto-generated method stub
 
-		if (x < 0 || x%10 == 0 && x!=0)
+		if (x < 0 || x % 10 == 0 && x != 0)
 			return false;
 
 		int i = 0;
-		
+
 		while (x > i) {
 			i = i * 10 + x % 10;
 			x = x / 10;
